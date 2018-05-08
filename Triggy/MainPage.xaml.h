@@ -6,6 +6,7 @@
 #pragma once
 
 #include "MainPage.g.h"
+#include "DProject.h"
 
 namespace Triggy
 {
@@ -16,6 +17,15 @@ namespace Triggy
 	{
 	public:
 		MainPage();
-
+		
+	private:
+		DProject^ dProject;
+		void hlbProjectname_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void OutputFileAsync(Windows::Storage::StorageFile^ file);
+		void abbSaveAs_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void abbLoad_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void abbNewProject_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void abbExport_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }
