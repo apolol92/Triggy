@@ -7,6 +7,7 @@
 #include "AreaControl.xaml.h"
 #include "DProject.h"
 #include <chrono>
+#include <ctime>
 
 using namespace Triggy;
 
@@ -43,10 +44,9 @@ Triggy::AreaControl::AreaControl(DProject^ dProject, String^ label)
 void Triggy::AreaControl::btEnter_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	this->counter++;
-	milliseconds ms = duration_cast<milliseconds>(
-		system_clock::now().time_since_epoch()
-		);
-	long t = ms.count();
+	std::time_t result = std::time(nullptr);
+	std::asctime(std::localtime(&result));
+	long t = result;
 	std::wstring line = this->label->Data();// +std::wstring(L",") + std::to_wstring(t) + std::wstring(L",") + direction1Counter + std::wstring(L",") + direction2Counter;
 	line.append(L",");
 	line.append(std::to_wstring(t));
@@ -69,7 +69,9 @@ void Triggy::AreaControl::btExit_Click(Platform::Object^ sender, Windows::UI::Xa
 		milliseconds ms = duration_cast<milliseconds>(
 			system_clock::now().time_since_epoch()
 			);
-		long t = ms.count();
+		std::time_t result = std::time(nullptr);
+		std::asctime(std::localtime(&result));
+		long t = result;
 		std::wstring line = this->label->Data();// +std::wstring(L",") + std::to_wstring(t) + std::wstring(L",") + direction1Counter + std::wstring(L",") + direction2Counter;
 		line.append(L",");
 		line.append(std::to_wstring(t));

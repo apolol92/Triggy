@@ -6,6 +6,7 @@
 #include "pch.h"
 #include "LineControl.xaml.h"
 #include <chrono>
+#include <ctime>
 using namespace Triggy;
 using namespace std;
 using namespace std::chrono;
@@ -40,10 +41,9 @@ Triggy::LineControl::LineControl(DProject^ dProject, String^ label)
 void Triggy::LineControl::btDirection1_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	direction1Counter++;
-	milliseconds ms = duration_cast< milliseconds >(
-		system_clock::now().time_since_epoch()
-		);
-	long t = ms.count();
+	std::time_t result = std::time(nullptr);
+	std::asctime(std::localtime(&result));
+	long t = result;
 	std::wstring line = this->label->Data();// +std::wstring(L",") + std::to_wstring(t) + std::wstring(L",") + direction1Counter + std::wstring(L",") + direction2Counter;
 	line.append(L",");
 	line.append(std::to_wstring(t));
@@ -59,10 +59,9 @@ void Triggy::LineControl::btDirection1_Click(Platform::Object^ sender, Windows::
 void Triggy::LineControl::btDirection2_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	direction2Counter++;
-	milliseconds ms = duration_cast< milliseconds >(
-		system_clock::now().time_since_epoch()
-		);
-	long t = ms.count();
+	std::time_t result = std::time(nullptr);
+	std::asctime(std::localtime(&result));
+	long t = result;
 	std::wstring line = this->label->Data();// +std::wstring(L",") + std::to_wstring(t) + std::wstring(L",") + direction1Counter + std::wstring(L",") + direction2Counter;
 	line.append(L",");
 	line.append(std::to_wstring(t));

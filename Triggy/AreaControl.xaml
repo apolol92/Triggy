@@ -16,9 +16,9 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Content="Enter Area" HorizontalAlignment="Stretch" Grid.Column="0" Name="btEnter" Click="btEnter_Click"/>
+            <Button Margin="5" Content="Enter Area" HorizontalAlignment="Stretch" Grid.Column="0" Name="btEnter" Click="btEnter_Click"/>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Text="0" FontSize="24" Name="tbCounter"/>
-            <Button Content="Exit Area" HorizontalAlignment="Stretch" Grid.Column="2" Name="btExit" Click="btExit_Click"/>
+            <Button Margin="5" Content="Exit Area" HorizontalAlignment="Stretch" Grid.Column="2" Name="btExit" Click="btExit_Click"/>
         </Grid>
     </StackPanel>
 </UserControl>

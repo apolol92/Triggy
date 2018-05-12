@@ -17,12 +17,16 @@
     <ClCompile Include="MainPage.xaml.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="DProject.cpp" />
+    <ClCompile Include="AreaControl.xaml.cpp" />
+    <ClCompile Include="LineControl.xaml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h" />
     <ClInclude Include="MainPage.xaml.h" />
     <ClInclude Include="DProject.h" />
+    <ClInclude Include="AreaControl.xaml.h" />
+    <ClInclude Include="LineControl.xaml.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">
